@@ -1,0 +1,8 @@
+create [or replace] trigger trig_sal
+before insert on employee
+for each row
+when(new.salary>5000)
+begin
+dbms_output.put_line('salary is inserted');
+end;
+/
